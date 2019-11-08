@@ -27,6 +27,7 @@ type BoltBucket struct {
 	expanded  bool
 	errorFlag bool
 	isRoot    bool
+	stats     bbolt.BucketStats
 }
 
 /*
@@ -447,6 +448,7 @@ func readBucket(b *bbolt.Bucket) (*BoltBucket, error) {
 	if b == nil {
 		return nil, errors.New("No bucket passed")
 	}
+	bb.stats = b.Stats()
 	b.ForEach(func(k, v []byte) error {
 		if v == nil {
 			tb, err := readBucket(b.Bucket(k))
