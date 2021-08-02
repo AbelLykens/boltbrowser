@@ -269,8 +269,8 @@ func (bd *BoltDB) syncOpenBuckets(shadow *BoltDB) {
 func (bd *BoltDB) refreshDatabase() *BoltDB {
 	// Reload the database into memBolt
 	memBolt = new(BoltDB)
-	db.View(func(tx *bolt.Tx) error {
-		err := tx.ForEach(func(nm []byte, b *bolt.Bucket) error {
+	db.View(func(tx *bbolt.Tx) error {
+		err := tx.ForEach(func(nm []byte, b *bbolt.Bucket) error {
 			bb, err := readBucket(b)
 			if err == nil {
 				bb.name = string(nm)
