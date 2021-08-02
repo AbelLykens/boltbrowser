@@ -1,4 +1,4 @@
-module github.com/br0xen/boltbrowser
+module github.com/AbelLykens/boltbrowser
 
 require (
 	github.com/br0xen/termbox-util v0.0.0-20170904143325-de1d4c83380e
