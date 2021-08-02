@@ -69,6 +69,7 @@ func parseArgs() {
 			case "-no-value":
 				if val == "true" {
 					AppArgs.NoValue = true
+                                }
 			case "-nosync", "-ns":
 				if val == "true" {
 					AppArgs.NoSync = true
