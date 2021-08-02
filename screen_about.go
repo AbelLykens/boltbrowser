@@ -100,6 +100,7 @@ func (screen *AboutScreen) drawScreen(style Style) {
 		{"", ""},
 		{"g", "goto top"},
 		{"G", "goto bottom"},
+		{"/", "filter"},
 		{"", ""},
 		{"ctrl+f", "jump down"},
 		{"ctrl+b", "jump up"},
